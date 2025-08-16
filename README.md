@@ -31,14 +31,14 @@ The tool provides a Tkinter-based GUI to:
      mkdir ckpt
      ```
    - Download the pretrained model from Google Drive:  
-     [molnextr+ocsaug.pth](https://drive.google.com/file/d/1hn9XGyBEQPwc8jgbixYgHlqIK9IMSt7q/view?usp=drive_link)  
+     [molscribe+ocsaug.pth](https://drive.google.com/file/d/1glGsZFxN3w-FEYY_mevLZgyh-Jrh0JqY/view?usp=sharing)  
    - Place the file into the `ckpt` folder:
      ```
      HAPC-OCSR/
      ├── main.py
      ├── environment.yml
      ├── ckpt/
-     │   └── molnextr+ocsaug.pth
+     │   └── molscribe+ocsaug.pth
      ```
 
 ---
@@ -58,7 +58,7 @@ python main.py
 ---
 
 ## Acknowledgements
-- **MolNexTR** for OCSR backbone.  
+- **MolScribe** for OCSR backbone.  
 - **RDKit**, **Pillow**, and **Tkinter** for visualization and GUI.  
 
 ---

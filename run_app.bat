@@ -1,0 +1,1 @@
+%USERPROFILE%\miniconda3\envs\hapc-ocsr\python.exe main.py

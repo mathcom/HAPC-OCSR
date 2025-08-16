@@ -1,4 +1,9 @@
+ckpt
 MolNexTR/__pycache__
 MolNexTR/decoding/__pycache__
 MolNexTR/indigo/__pycache__
 MolNexTR/models/__pycache__
+MolScribe/__pycache__
+MolScribe/indigo/__pycache__
+MolScribe/inference/__pycache__
+MolScribe/transformer/__pycache__

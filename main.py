@@ -5,13 +5,29 @@ from PIL import Image, ImageTk
 
 import torch
 from MolNexTR import molnextr
+from MolScribe import molscribe
+
 
 ## PyTorch 모델 클래스
 class MyModel:
-    def __init__(self):
-        self.model = molnextr('./ckpt/molnextr+ocsaug.pth', torch.device('cpu'))
+    def __init__(self, name="molscribe"):
+        self.name = name
+        if self.name == "molnextr":
+            self.model = molnextr(os.path.join('.', 'ckpt', 'molnextr+ocsaug.pth', torch.device('cpu'))
+            self._predict = self._predict_molnextr
+        else:
+            self.model = molscribe('.', 'ckpt', 'molscribe+ocsaug.pth', torch.device('cpu'))
+            self._predict = self._predict_molscribe
             
     def predict(self, filepath_image):
+        return self._predict(filepath_image)
+        
+    def _predict_molscribe(self, filepath_image):
+        res = self.model.predict_image_file(filepath_image)
+        smi = res['smiles']
+        return smi
+        
+    def _predict_molnextr(self, filepath_image):
         with torch.no_grad():
             res = self.model.predict_final_results(filepath_image, return_atoms_bonds=True)
         smi = res['predicted_smiles']
