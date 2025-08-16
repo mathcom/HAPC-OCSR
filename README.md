@@ -77,6 +77,15 @@ This script will automatically launch the program using:
 
 ---
 
+## Citation
+If you use **HAPC-OCSR** in your research, please cite the following papers:
+
+- Kim, Jin Hyuk, and Jonghwan Choi. *"OCSAug: diffusion-based optical chemical structure data augmentation for improved hand-drawn chemical structure image recognition."* The Journal of Supercomputing 81.8 (2025): 926. https://doi.org/10.1007/s11227-025-07406-4 
+- Chen, Yufan, et al. *"MolNexTR: a generalized deep learning model for molecular image recognition."* Journal of Cheminformatics 16.1 (2024): 141. https://doi.org/10.1186/s13321-024-00926-w 
+- Qian, Yujie, et al. *"MolScribe: robust molecular structure recognition with image-to-graph generation."* Journal of Chemical Information and Modeling 63.7 (2023): 1925-1934. https://doi.org/10.1021/acs.jcim.2c01480 
+
+---
+
 ## Contact
 ```bash
 jonghwanc@hallym.ac.kr
