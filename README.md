@@ -13,6 +13,12 @@ The tool provides a Tkinter-based GUI to:
 
 ## Installation
 
+> **Note for Windows users**  
+> Since this repository provides a Windows-specific launcher (`run_app.bat`), please place the `HAPC-OCSR-master` directory under your Documents folder:  
+> ```
+> C:\Users\%USERNAME%\Documents\HAPC-OCSR-master
+> ```
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/mathcom/HAPC-OCSR.git
@@ -30,35 +36,43 @@ The tool provides a Tkinter-based GUI to:
      ```bash
      mkdir ckpt
      ```
-   - Download the pretrained model from Google Drive:  
+   - Download the pretrained models from Google Drive:  
      [molscribe+ocsaug.pth](https://drive.google.com/file/d/1glGsZFxN3w-FEYY_mevLZgyh-Jrh0JqY/view?usp=sharing)  
-   - Place the file into the `ckpt` folder:
+     [molnextr+ocsaug.pth](https://drive.google.com/file/d/1hn9XGyBEQPwc8jgbixYgHlqIK9IMSt7q/view?usp=sharing)  
+   - Place the files into the `ckpt` folder:
      ```
-     HAPC-OCSR/
+     HAPC-OCSR-master/
      ├── main.py
+     ├── run_app.bat
      ├── environment.yml
      ├── ckpt/
      │   └── molscribe+ocsaug.pth
+     │   └── molnextr+ocsaug.pth
      ```
 
 ---
 
 ## Usage
 
-Run the application with:
+### Option 1: Run with Conda
 ```bash
 python main.py
 ```
 
-**Workflow**  
-- Choose an image file → Run prediction → View original and RDKit-rendered structures side by side.  
-- Copy predicted SMILES with the **Copy** button.  
-- Use **Back** to return to the input screen.  
+### Option 2: Run with Batch file (Windows only)
+Simply double-click:
+```
+run_app.bat
+```
+This script will automatically launch the program using:
+```
+%USERPROFILE%\miniconda3\envs\hapc-ocsr\python.exe %USERPROFILE%\Documents\HAPC-OCSR-master\main.py
+```
 
 ---
 
 ## Acknowledgements
-- **MolScribe** for OCSR backbone.  
+- **MolScribe** and **MolNexTR** for OCSR backbone.  
 - **RDKit**, **Pillow**, and **Tkinter** for visualization and GUI.  
 
 ---
