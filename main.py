@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from rdkit.Chem import Draw, MolFromSmiles, rdDepictor
 from tkinter import filedialog, messagebox
@@ -13,10 +14,10 @@ class MyModel:
     def __init__(self, name="molscribe"):
         self.name = name
         if self.name == "molnextr":
-            self.model = molnextr(os.path.join('.', 'ckpt', 'molnextr+ocsaug.pth', torch.device('cpu'))
+            self.model = molnextr(os.path.join('.', 'ckpt', 'molnextr+ocsaug.pth'), torch.device('cpu'))
             self._predict = self._predict_molnextr
         else:
-            self.model = molscribe('.', 'ckpt', 'molscribe+ocsaug.pth', torch.device('cpu'))
+            self.model = molscribe(os.path.join('.', 'ckpt', 'molscribe+ocsaug.pth'), torch.device('cpu'))
             self._predict = self._predict_molscribe
             
     def predict(self, filepath_image):
